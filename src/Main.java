@@ -9,7 +9,7 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
         ObjectMapper mapper = new ObjectMapper();
-        JsonNode root = mapper.readTree(new File("W:\\java\\SpringBoot\\Hashira\\src\\input.json"));
+        JsonNode root = mapper.readTree(new File("W:\\java\\SpringBoot\\Hashira\\src\\input2.json"));
 
         int n = root.get("keys").get("n").asInt();
         int k = root.get("keys").get("k").asInt();
@@ -35,7 +35,7 @@ public class Main {
         points.sort(Comparator.comparingInt(p -> p.x));
         System.out.println("Original points: ");
         for (Point p : points) {
-            System.out.println(p.x + " " + p.y);
+            System.out.println(p.x + " " + p.y+",");
         }
         if (points.size() < k) {
             throw new RuntimeException("Not enough points to reconstruct polynomial");
